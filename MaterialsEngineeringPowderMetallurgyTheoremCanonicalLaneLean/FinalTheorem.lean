@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.MaterialsEngineeringPowderMetallurgyTheoremCanonicalLaneLean.SinteringThermodynamics
+import HautevilleHouse.MaterialsEngineeringPowderMetallurgyTheoremCanonicalLaneLean.PowderCharacterization
+import HautevilleHouse.MaterialsEngineeringPowderMetallurgyTheoremCanonicalLaneLean.ConsolidationMechanics
+
+namespace HautevilleHouse
+namespace MaterialsEngineeringPowderMetallurgyTheoremCanonicalLaneLean
+
+def MaterialsEngineeringPowderMetallurgyClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem materials_engineering_powder_metallurgy_endgame (A : AdmissibleClass) :
+    MaterialsEngineeringPowderMetallurgyClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end MaterialsEngineeringPowderMetallurgyTheoremCanonicalLaneLean
+end HautevilleHouse
